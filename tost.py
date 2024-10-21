@@ -5,5 +5,3 @@ a = 0
 b = ran.randint(1, 3)
 c = 69
 
-str = input("Secret phrase? ")
-
