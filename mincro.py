@@ -60,6 +60,7 @@ def steptracker():
             display.clear()
             break
 
+#main script picker code
 def main():
     des = 0
 
