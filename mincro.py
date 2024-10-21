@@ -60,6 +60,30 @@ def steptracker():
             display.clear()
             main()
 
+
+#night light
+def nightLight():
+    display.clear()
+
+    while True:
+
+        #check if light level is below 50
+        if display.read_light_level() < 51:
+            display.clear()
+            display.show(Image('99999:'
+                               '99999:'
+                               '99999:'
+                               '99999:'
+                               '99999'))
+
+        else: 
+            display.clear()
+
+        if button_a.was_pressed():
+            display.clear()
+            main()
+
+
 #main script picker code
 def main():
     des = 0
@@ -97,9 +121,9 @@ def main():
             elif des == 2:
                 steptracker()
 
-            #empty space
+            #night light
             elif des == 3:
-                pass
+                nightLight()
 
             #empty space
             elif des == 4:
