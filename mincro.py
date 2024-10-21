@@ -107,8 +107,3 @@ def main():
 
 
 main()
-
-#               IDEAS:                  #
-
-# -instead of the while True, make a function for the main script that 
-#  can be run when you want to end a function but break doesnt work
