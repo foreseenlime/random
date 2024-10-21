@@ -60,62 +60,54 @@ def steptracker():
             display.clear()
             break
 
-#while True:
-    #if button_a.is_pressed():
-        #dice()
+def main():
+    des = 0
 
-    #if button_b.is_pressed():
-        #pass
+    while True:
 
-    #if pin_logo.is_touched():
-        #pass
+        #lights up the pixel currently being targeted
+        display.set_pixel(des, 2, 9)
 
-des = 0
+        if button_b.was_pressed():
 
-while True:
+            #if it is right by the right side, make it loop back to the left 
+            #and clear the other pixels
+            if des == 4:
+                display.clear()
+                des = 0
 
-    #lights up the pixel currently being targeted
-    display.set_pixel(des, 2, 9)
+            #move the pixel 1 to the right
+            else: 
+                des += 1
 
-    if button_b.was_pressed():
-
-        #if it is right by the right side, make it loop back to the left and clear the other pixels
-        if des == 4:
-            display.clear()
-            des = 0
-
-        #move the pixel 1 to the right
-        else: 
-            des += 1
-
-    #picking the function using above script:
+        #picking the function using above script:
     
-    if button_a.was_pressed():
+        if button_a.was_pressed():
         
-        #heart function
-        if des == 0:
-            heart()
+            #heart function
+            if des == 0:
+                heart()
 
-        #dice function
-        elif des == 1:
-            dice()
+            #dice function
+            elif des == 1:
+                dice()
 
-        #steptracker function
-        elif des == 2:
-            steptracker()
+            #steptracker function
+            elif des == 2:
+                steptracker()
 
-        #empty space
-        elif des == 3:
-            pass
+            #empty space
+            elif des == 3:
+                pass
 
-        #empty space
-        elif des == 4:
-            pass
+            #empty space
+            elif des == 4:
+                pass
+
+
+main()
 
 #               IDEAS:                  #
 
-# -instead of the while True, make a function for the main script that can be run when you want to end a 
-#  function but break doesnt work
-
-# - make a function picker similar to what you had at the start, where pressing B changed a pixel on the display, 
-#   and pressing A picks the function
+# -instead of the while True, make a function for the main script that 
+#  can be run when you want to end a function but break doesnt work
