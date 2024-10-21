@@ -3,10 +3,6 @@ from random import *
 from microbit import *
 from music import *
 
-
-display.show(Image.HAPPY)
-
-
 #heart beating function
 def heart():
     while True:
@@ -42,6 +38,7 @@ def dice():
         
         #checks if button was pressed to see if it needs to be cancelled
         if button_b.was_pressed():
+            display.clear()
             break
 
 
@@ -63,19 +60,57 @@ def steptracker():
             display.clear()
             break
 
+#while True:
+    #if button_a.is_pressed():
+        #dice()
+
+    #if button_b.is_pressed():
+        #pass
+
+    #if pin_logo.is_touched():
+        #pass
+
+des = 0
+
 while True:
-    if button_a.is_pressed():
-        dice()
 
-    if button_b.is_pressed():
-        pass
+    #lights up the pixel currently being targeted
+    display.set_pixel(des, 2, 9)
 
-    if pin_logo.is_touched():
-        pass
+    if button_b.was_pressed():
 
+        #if it is right by the right side, make it loop back to the left and clear the other pixels
+        if des == 4:
+            display.clear()
+            des = 0
 
+        #move the pixel 1 to the right
+        else: 
+            des += 1
 
+    #picking the function using above script:
+    
+    if button_a.was_pressed():
+        
+        #heart function
+        if des == 0:
+            heart()
 
+        #dice function
+        elif des == 1:
+            dice()
+
+        #steptracker function
+        elif des == 2:
+            steptracker()
+
+        #empty space
+        elif des == 3:
+            pass
+
+        #empty space
+        elif des == 4:
+            pass
 
 #               IDEAS:                  #
 
