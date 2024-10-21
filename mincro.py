@@ -23,7 +23,7 @@ def heart():
         #checks if button was pressed to see if it needs to be cancelled
         if button_b.was_pressed():
             display.clear()
-            break
+            main()
 
 
 #dice function
@@ -39,7 +39,7 @@ def dice():
         #checks if button was pressed to see if it needs to be cancelled
         if button_b.was_pressed():
             display.clear()
-            break
+            main()
 
 
 #steptracker function
@@ -58,7 +58,7 @@ def steptracker():
         #check if button was pressed to see if it needs to be cancelled
         if button_b.was_pressed():
             display.clear()
-            break
+            main()
 
 #main script picker code
 def main():
