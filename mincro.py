@@ -138,6 +138,7 @@ def main():
             #if it is right by the right side, make it loop back to the left 
             #and clear the other pixels
             if desX == 4:
+                desX = 0
 
                 if desY == 4:
                     display.clear()
@@ -145,9 +146,6 @@ def main():
 
                 else:
                     desY += 1
-
-                #display.clear()
-                #des = 0
 
             #move the pixel 1 to the right
             else: 
@@ -158,24 +156,103 @@ def main():
         if button_a.was_pressed():
         
             #heart function
-            if desX == 0:
+            if desX == 0 and desY == 0:
                 heart()
 
             #dice function
-            elif desX == 1:
+            elif desX == 1 and desY == 0:
                 dice()
 
             #steptracker function
-            elif desX == 2:
+            elif desX == 2 and desY == 0:
                 steptracker()
 
             #night light
-            elif desX == 3:
+            elif desX == 3 and desY == 0:
                 nightLight()
 
             #rock paper scissors
-            elif desX == 4:
+            elif desX == 4 and desY == 0:
                 rps()
 
+            #empty space
+            elif desX == 0 and desY == 1:
+                pass
+            
+            #empty space
+            elif desX == 1 and desY == 1:
+                pass
+            
+            #empty space
+            elif desX == 2 and desY == 1:
+                pass
+            
+            #empty space
+            elif desX == 3 and desY == 1:
+                pass
+            
+            #empty space
+            elif desX == 4 and desY == 1:
+                pass
+            
+            #empty space
+            elif desX == 0 and desY == 2:
+                pass
+            
+            #empty space
+            elif desX == 1 and desY == 2:
+                pass
+            
+            #empty space
+            elif desX == 2 and desY == 2:
+                pass
+            
+            #empty space
+            elif desX == 3 and desY == 2:
+                pass
+            
+            #empty space
+            elif desX == 4 and desY == 2:
+                pass
+            
+            #empty space
+            elif desX == 0 and desY == 3:
+                pass
+            
+            #empty space
+            elif desX == 1 and desY == 3:
+                pass
+            
+            #empty space
+            elif desX == 2 and desY == 3:
+                pass
+            
+            #empty space
+            elif desX == 3 and desY == 3:
+                pass
+            
+            #empty space
+            elif desX == 4 and desY == 3:
+                pass
+            
+            #empty space
+            elif desX == 0 and desY == 4:
+                pass
+            
+            #empty space
+            elif desX == 1 and desY == 4:
+                pass
+            
+            #empty space
+            elif desX == 2 and desY == 4:
+                pass
+            
+            #empty space
+            elif desX == 3 and desY == 4:
+                pass
+            
+            #empty space
+            elif desX == 4 and desY == 4:
+                pass
 
 main()
