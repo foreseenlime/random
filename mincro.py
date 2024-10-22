@@ -125,47 +125,56 @@ def rps():
 
 #main script picker code
 def main():
-    des = 0
+    desX = 0
+    desY = 0
 
     while True:
 
         #lights up the pixel currently being targeted
-        display.set_pixel(des, 2, 9)
+        display.set_pixel(desX, desY, 9)
 
         if button_b.was_pressed():
 
             #if it is right by the right side, make it loop back to the left 
             #and clear the other pixels
-            if des == 4:
-                display.clear()
-                des = 0
+            if desX == 4:
+
+                if desY == 4:
+                    display.clear()
+                    desY = 0
+
+                else:
+                    desY += 1
+
+                #display.clear()
+                #des = 0
 
             #move the pixel 1 to the right
             else: 
-                des += 1
+                desX += 1
 
         #picking the function using above script:
     
         if button_a.was_pressed():
         
             #heart function
-            if des == 0:
+            if desX == 0:
                 heart()
 
             #dice function
-            elif des == 1:
+            elif desX == 1:
                 dice()
 
             #steptracker function
-            elif des == 2:
+            elif desX == 2:
                 steptracker()
 
             #night light
-            elif des == 3:
+            elif desX == 3:
                 nightLight()
 
             #rock paper scissors
-            elif des == 4:
+            elif desX == 4:
                 rps()
 
 
