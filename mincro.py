@@ -68,8 +68,7 @@ def nightLight():
     while True:
 
         #check if light level is below 50
-        if display.read_light_level() < 51:
-            display.clear()
+        if display.read_light_level() < 6:
             display.show(Image('99999:'
                                '99999:'
                                '99999:'
@@ -79,7 +78,7 @@ def nightLight():
         else: 
             display.clear()
 
-        if button_a.was_pressed():
+        if button_b.was_pressed():
             display.clear()
             main()
 
