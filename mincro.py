@@ -127,18 +127,20 @@ def rps():
 
 #radio test
 def radio():
+    display.clear()
     on()
 
     while True:
 
         #message reciving stuff
-        message = recive()
+        message = receive()
 
         if message:
-            display.show(message)
+            display.scroll(message)
 
         #if A was pressed, send "aloo"
         if button_a.was_pressed():
+            display.scroll('sent')
             send('aloo')
 
         #if B was pressed, exit to menu
