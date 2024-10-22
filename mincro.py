@@ -2,6 +2,9 @@ from time import *
 from random import *
 from microbit import *
 from music import *
+from radio import *
+
+config(group = 35)
 
 #heart beating function
 def heart():
@@ -122,6 +125,29 @@ def rps():
             display.clear()
             main()
 
+#radio test
+def radio():
+    on()
+
+    while True:
+
+        #message reciving stuff
+        message = recive()
+
+        if message:
+            display.show(message)
+
+        #if A was pressed, send "aloo"
+        if button_a.was_pressed():
+            send('aloo')
+
+        #if B was pressed, exit to menu
+        if button_b.was_pressed():
+            display.clear()
+            off()
+            main()
+
+
 
 #main script picker code
 def main():
@@ -140,6 +166,7 @@ def main():
             if desX == 4:
                 desX = 0
 
+                #if at bottom, scroll back to top
                 if desY == 4:
                     display.clear()
                     desY = 0
@@ -175,9 +202,9 @@ def main():
             elif desX == 4 and desY == 0:
                 rps()
 
-            #empty space
+            #radio
             elif desX == 0 and desY == 1:
-                pass
+                radio()
             
             #empty space
             elif desX == 1 and desY == 1:
