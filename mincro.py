@@ -78,6 +78,46 @@ def nightLight():
         else: 
             display.clear()
 
+        #if B was pressed, exit to menu
+        if button_b.was_pressed():
+            display.clear()
+            main()
+
+
+#rock paper scissors
+def rps():
+    display.clear()
+
+    while True:
+        #when shake, play
+        if accelerometer.was_gesture('shake'):
+            rpsDes = randint(1, 3)
+
+            #rock
+            if rpsDes == 1:
+                display.show(Image('00000:'
+                                   '09990:'
+                                   '09090:'
+                                   '09990:'
+                                   '00000'))
+
+            #paper
+            elif rpsDes == 2:
+                display.show(Image('99999:'
+                                   '90009:'
+                                   '90009:'
+                                   '90009:'
+                                   '99999'))
+
+            #scissors
+            else:
+                display.show(Image('99009:'
+                                   '99090:'
+                                   '00900:'
+                                   '99090:'
+                                   '99009'))
+
+        #if B was pressed, exit to menu
         if button_b.was_pressed():
             display.clear()
             main()
@@ -124,9 +164,9 @@ def main():
             elif des == 3:
                 nightLight()
 
-            #empty space
+            #rock paper scissors
             elif des == 4:
-                pass
+                rps()
 
 
 main()
