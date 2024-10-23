@@ -90,6 +90,7 @@ def nightLight():
 #rock paper scissors
 def rps():
     display.clear()
+    display.scroll('RPS')
 
     while True:
         #when shake, play
@@ -149,6 +150,22 @@ def radio():
             off()
             main()
 
+#temperature
+def temp():
+    display.clear()
+
+    display.show('T')
+    
+    while True:
+        
+        #display temp
+        if button_a.was_pressed():
+            display.scroll(temperature())
+
+        #if B was pressed, exit to menu
+        if button_b.was_pressed():
+            display.clear()
+            main()
 
 
 #main script picker code
@@ -208,9 +225,9 @@ def main():
             elif desX == 0 and desY == 1:
                 radio()
             
-            #empty space
+            #temperature
             elif desX == 1 and desY == 1:
-                pass
+                temp()
             
             #empty space
             elif desX == 2 and desY == 1:
