@@ -167,6 +167,24 @@ def temp():
             display.clear()
             main()
 
+########  vvvvv TEST THIS ON FRIDAY vvvvv ########
+
+#compass
+def comp():
+    display.clear()
+    compass.calibrate()
+
+    while True:
+
+        #show direction
+        if button_a.was_pressed():
+            display.show(compass.heading())
+
+        #if B was pressed, exit to menu
+        if button_b.was_pressed():
+            display.clear()
+            main()
+
 
 #main script picker code
 def main():
@@ -229,8 +247,9 @@ def main():
             elif desX == 1 and desY == 1:
                 temp()
             
-            #empty space
+            #compass
             elif desX == 2 and desY == 1:
+                #comp()
                 pass
             
             #empty space
