@@ -141,8 +141,9 @@ def radio():
 
         #if A was pressed, send "aloo"
         if button_a.was_pressed():
-            display.scroll('sent')
             send('aloo')
+            display.scroll('sent')
+            
 
         #if B was pressed, exit to menu
         if button_b.was_pressed():
