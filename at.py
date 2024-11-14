@@ -53,6 +53,10 @@ def shoot():
 
     bulletP = 4
     exBulletP = 3
+    while True:
+        if pin_logo.is_touched() == False:
+            break
+    
 
 while True:
 
@@ -62,5 +66,7 @@ while True:
     if button_b.is_pressed():
         moveRight()
 
-    if button_a.is_pressed() and button_b.is_pressed():
+    if pin_logo.is_touched():
         shoot()
+
+
