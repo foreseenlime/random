@@ -18,7 +18,9 @@ while True:
             display.set_pixel(playerP, 4, 9)
             display.set_pixel(exPlayerP, 4, 0)
             exPlayerP = playerP
-            sleep_ms(100)
+            while True:
+                if button_a.is_pressed() == False:
+                    break
 
     if button_b.is_pressed():
         if playerP != 4:
@@ -26,7 +28,9 @@ while True:
             display.set_pixel(playerP, 4, 9)
             display.set_pixel(exPlayerP, 4, 0)
             exPlayerP = playerP
-            sleep_ms(100)
+            while True:
+                if button_b.is_pressed() == False:
+                    break
 
     if button_a.is_pressed() and button_b.is_pressed():
         bulletP -= 1
