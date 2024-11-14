@@ -56,6 +56,9 @@ def shoot():
     while True:
         if pin_logo.is_touched() == False:
             break
+
+def enem():
+    
     
 
 while True:
@@ -69,4 +72,12 @@ while True:
     if pin_logo.is_touched():
         shoot()
 
+    enemx = randint(0, 4)
+    display.set_pixel(enemx, 0, 9)
+    oenemx = display.get_pixel(enemx, 0)
 
+    if oenemx == 0:
+        emenyd = True
+
+    else:
+        emenyd = False
