@@ -58,7 +58,7 @@ def shoot():
             break
 
 def enem():
-    
+    pass
     
 
 while True:
